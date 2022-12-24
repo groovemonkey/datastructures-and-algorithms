@@ -29,7 +29,7 @@ func (b *BinarySearchTree) Traverse() {
 	b.root.traverse(f)
 }
 
-func (tree *BinarySearchTree) Insert(value int) {
+func (tree *BinarySearchTree) Insert(value int) *BSTNode {
 	var y *BSTNode = nil
 	var temp *BSTNode = tree.root
 
@@ -58,6 +58,8 @@ func (tree *BinarySearchTree) Insert(value int) {
 	} else {
 		y.right = n
 	}
+
+	return n
 }
 
 // Min() returns the node containing the minimum value in the entire tree

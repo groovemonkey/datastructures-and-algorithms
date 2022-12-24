@@ -10,8 +10,12 @@ The time complexity of these operations is bound by *h*, the height of the tree.
 | Delete    | O(h)            |
 | Search    | O(h)            |
 
+### Worst Case
+
+Worst case performance is much like a linked list, which happens when this (unbalanced) tree is built with sorted input (e.g. inserts are ordered). This results in maximum skew, where e.g. every node has a single child on the right side, all the way down.
 
 ## TODOs/Ideas
 
+- Genericize? Create a BST initialization function that takes a datatype and a less() function? -- that way any concrete type could be used as the stored datatype
 - tree.Traverse() should return a slice, not print stuff
 - Make this threadsafe with a mutex on [insert, delete, traverse]
