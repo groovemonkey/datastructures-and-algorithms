@@ -63,3 +63,17 @@ func TestDelete(t *testing.T) {
 	found := tree.Search(5)
 	assert.Nil(t, found, "delete an element from the tree")
 }
+
+func TestTreeMinMax(t *testing.T) {
+	tree := BinarySearchTree{}
+	tree.Insert(5)
+	assert.Equal(t, 5, tree.Min().Value)
+	assert.Equal(t, 5, tree.Max().Value)
+
+	tree.Insert(2)
+	assert.Equal(t, 2, tree.Min().Value)
+	assert.Equal(t, 5, tree.Max().Value)
+
+	tree.Insert(7)
+	assert.Equal(t, 7, tree.Max().Value)
+}

@@ -60,6 +60,28 @@ func (tree *BinarySearchTree) Insert(value int) {
 	}
 }
 
+// Min() returns the node containing the minimum value in the entire tree
+func (tree *BinarySearchTree) Min() *BSTNode {
+	min := tree.root
+
+	// Just scoot left until we're at the leftmost node
+	for min.left != nil {
+		min = min.left
+	}
+	return min
+}
+
+// Max() returns the node containing the maximum value in the entire tree
+func (tree *BinarySearchTree) Max() *BSTNode {
+	max := tree.root
+
+	// Just scoot right until we're at the rightmost node
+	for max.right != nil {
+		max = max.right
+	}
+	return max
+}
+
 type BSTNode struct {
 	// Whatever type you need for the value
 	Value  int
@@ -68,14 +90,14 @@ type BSTNode struct {
 	parent *BSTNode
 }
 
-// mimic sort's functionality - .less()
+// TODO unfinished -- mimic sort's functionality - .less()
 // is this Node's value less than the comparison value parameter?
 func (n *BSTNode) Less(val int) bool {
 	return n.Value < val
 }
 
-// FindMin() returns the node containing the minimum value in the subtree under n
-func (n *BSTNode) FindMin() *BSTNode {
+// SubtreeMin() returns the node containing the minimum value in the subtree under n
+func (n *BSTNode) SubtreeMin() *BSTNode {
 	min := n
 
 	// Just scoot left until we're at the leftmost node
@@ -86,8 +108,8 @@ func (n *BSTNode) FindMin() *BSTNode {
 	return min
 }
 
-// FindMax() returns the node containing the maximum value in the subtree under n
-func (n *BSTNode) FindMax() *BSTNode {
+// SubtreeMax() returns the node containing the maximum value in the subtree under n
+func (n *BSTNode) SubtreeMax() *BSTNode {
 	max := n
 
 	// Just scoot right until we're at the rightmost node
@@ -152,7 +174,7 @@ func (t *BinarySearchTree) Delete(n *BSTNode) {
 	} else if n.right == nil {
 		t.transplant(n, n.left)
 	} else {
-		y := n.right.FindMin()
+		y := n.right.SubtreeMin()
 		if y.parent != n {
 			t.transplant(n, n.right)
 			y.right = n.right
