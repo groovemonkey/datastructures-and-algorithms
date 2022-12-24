@@ -2,7 +2,7 @@
 
 ## Performance:
 
-The trick here, regardless of which datastructure is backing the Queue, is to maintain a pointer to the minimum value to make the find-min operation cheap.
+The trick here, regardless of which datastructure is backing the queue, is to maintain a pointer to the minimum value to make the find-min operation cheap.
 
 | Operation  | Unsorted Array | Sorted Array | Balanced Tree |
 |------------|----------------|--------------|---------------|
@@ -15,6 +15,6 @@ The trick here, regardless of which datastructure is backing the Queue, is to ma
 
 - BST implementation: track min node w/ pointer, not value?
 - implement as sorted array
-- use a balanced tree, not a regular binary search treee
+- use a balanced tree, not a regular binary search tree
 - add error handling (requires errors being returned from the binarysearchtree package as well)
-s
+

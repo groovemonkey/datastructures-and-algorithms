@@ -11,3 +11,13 @@ My general plan is, for each datastructure, e.g. Binary Search Trees:
 
 My first crack at this is going to follow Skiena's "The Algorithm Design Manual" fairly closely. I may add stuff from CLRS and other textbooks as well if this format works well for my learning.
 
+
+## Tests
+
+Running `go test ./...` should always work:
+
+```
+➜  datastructures-and-algorithms git:(master) go test ./...
+ok  	github.com/groovemonkey/datastructures-and-algorithms/binarysearchtree	(cached)
+ok  	github.com/groovemonkey/datastructures-and-algorithms/priorityqueue	(cached)
+```
