@@ -13,5 +13,8 @@ The trick here, regardless of which datastructure is backing the Queue, is to ma
 
 ## TODOs/Ideas
 
+- BST implementation: track min node w/ pointer, not value?
 - implement as sorted array
 - use a balanced tree, not a regular binary search treee
+- add error handling (requires errors being returned from the binarysearchtree package as well)
+s
